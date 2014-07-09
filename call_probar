@@ -1,0 +1,17 @@
+#!/bin/ksh -x
+PS4='${LINENO}--'
+
+
+./probar_6 100 1 1000
+sleep 0.5
+i=10
+until [[ $i -eq 0 ]];do
+	./probar_6 100 $i 40
+	((i=$i-1))
+	sleep 0.4
+	#./probar_5 50 5
+	#sleep 0.8
+done
+./probar_6 50 1 10
+echo
+rm -rf lastNum
